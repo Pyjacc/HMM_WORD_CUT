@@ -93,7 +93,8 @@ class HmmTrain:
         # 状态转移矩阵的归一化
         for key in trans_dict:
             for key1 in trans_dict[key]:
-                trans_dict[key][key1] = emit_dict[key][key1] / Count_dict[key]
+                trans_dict[key][key1] = trans_dict[key][key1] / Count_dict[key]
+
         # 发射矩阵的归一化
         for key in emit_dict:
             for word in emit_dict[key]:
